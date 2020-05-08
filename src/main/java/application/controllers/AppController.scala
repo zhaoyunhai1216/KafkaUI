@@ -19,7 +19,7 @@ import javafx.stage.Stage
  * @date 2020/3/2711:39
  */
 class AppController extends BaseController {
-  var uri = new URI("http://www.baidu.com")
+  var uri = new URI("https://github.com/zhaoyunhai1216/KafkaUI")
   var menuList: Array[MenuButton] = _
   @FXML var prompt:Label = _
   @FXML var fileMenu: MenuButton = _
