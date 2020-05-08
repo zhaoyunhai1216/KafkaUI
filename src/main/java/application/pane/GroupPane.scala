@@ -16,6 +16,7 @@ import javafx.scene.layout.Pane
 import org.apache.kafka.clients.admin.{ConsumerGroupDescription, MemberDescription}
 import org.apache.kafka.clients.consumer.OffsetAndMetadata
 import org.apache.kafka.common.TopicPartition
+import org.apache.logging.log4j.LogManager
 import org.slf4j.{Logger, LoggerFactory}
 
 /**
@@ -35,7 +36,7 @@ class GroupPane(
   val fxChart = new FxChart("读取数据量", () => getChartValue())
   var lastOffset = -1L
   var offset = 0L
-  val logger: Logger = LoggerFactory.getLogger(this.getClass)
+  val logger = LogManager.getLogger(this.getClass)
   override def toString = name
 
   /**

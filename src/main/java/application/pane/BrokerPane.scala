@@ -12,6 +12,7 @@ import javafx.collections.FXCollections
 import javafx.scene.layout.Pane
 import org.apache.kafka.clients.admin.ConfigEntry
 import org.apache.kafka.common.Node
+import org.apache.logging.log4j.LogManager
 import org.slf4j.{Logger, LoggerFactory}
 
 /**
@@ -28,7 +29,7 @@ class BrokerPane(
   val isLoading = new AtomicBoolean(false)
   val adminClient = cluster.adminClient
   var rows = FXCollections.observableArrayList[Row]
-  val logger: Logger = LoggerFactory.getLogger(this.getClass)
+  val logger = LogManager.getLogger(this.getClass)
 
   /**
    * 获取字符串表示信息

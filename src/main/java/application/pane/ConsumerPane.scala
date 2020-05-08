@@ -15,6 +15,7 @@ import javafx.scene.layout.Pane
 import org.apache.kafka.clients.admin.TopicDescription
 import org.apache.kafka.clients.consumer.{ConsumerRecord, KafkaConsumer}
 import org.apache.kafka.common.{Node, TopicPartition, TopicPartitionInfo}
+import org.apache.logging.log4j.LogManager
 import org.slf4j.{Logger, LoggerFactory}
 
 /**
@@ -35,7 +36,7 @@ class ConsumerPane(
   var offset = 0L
   val records = controller.recordView.getItems
   var consumer: KafkaConsumer[Array[Byte], Array[Byte]] = _
-  val logger: Logger = LoggerFactory.getLogger(this.getClass)
+  val logger = LogManager.getLogger(this.getClass)
   val console = new FxOutput(controller.recordView, controller.keepSize)
 
   /**

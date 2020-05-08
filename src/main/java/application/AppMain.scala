@@ -6,7 +6,7 @@ import javafx.scene.image.Image
 import javafx.scene.layout.Pane
 import javafx.scene.{Scene, paint}
 import javafx.stage.{Stage, StageStyle}
-import org.slf4j.LoggerFactory
+import org.apache.logging.log4j.LogManager
 /**
  * @title: Application
  * @projectName KafkaUI
@@ -38,11 +38,11 @@ class AppMain extends Application{
 
 object AppMain{
   def main(args: Array[String]): Unit = {
+    logger.info("KafkaUI正在启动，请等待。")
     Application.launch(classOf[AppMain], args: _*)
-    logger.info("主窗体启动完毕.")
   }
   /**
    * 日志
    */
-  val logger = LoggerFactory.getLogger(AppMain.getClass)
+  val logger = LogManager.getLogger(AppMain.getClass)
 }

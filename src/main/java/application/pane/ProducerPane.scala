@@ -15,6 +15,7 @@ import javafx.scene.layout.Pane
 import org.apache.kafka.clients.admin.TopicDescription
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
 import org.apache.kafka.common.{Node, TopicPartition, TopicPartitionInfo}
+import org.apache.logging.log4j.LogManager
 import org.slf4j.{Logger, LoggerFactory}
 
 /**
@@ -36,7 +37,7 @@ class ProducerPane(
   var offset = 0L
   val records = controller.historyView.getItems
   var producer: KafkaProducer[Array[Byte], Array[Byte]] = _
-  val logger: Logger = LoggerFactory.getLogger(this.getClass)
+  val logger = LogManager.getLogger(this.getClass)
   val dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS")
 
   /**

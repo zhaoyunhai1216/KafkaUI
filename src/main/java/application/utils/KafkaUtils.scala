@@ -14,6 +14,7 @@ import org.apache.kafka.clients.{CommonClientConfigs, admin}
 import org.apache.kafka.common.config.ConfigResource
 import org.apache.kafka.common.serialization.ByteArrayDeserializer
 import org.apache.kafka.common.{KafkaFuture, Node, TopicPartition}
+import org.apache.logging.log4j.LogManager
 import org.slf4j.{Logger, LoggerFactory}
 
 /**
@@ -24,7 +25,7 @@ import org.slf4j.{Logger, LoggerFactory}
  * @date 2020/3/24 21:36
  */
 object KafkaUtils {
-  val logger: Logger = LoggerFactory.getLogger(KafkaUtils.getClass)
+  val logger = LogManager.getLogger(KafkaUtils.getClass)
   val consumer_props = new Properties
   consumer_props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "true")
   consumer_props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, "1000")

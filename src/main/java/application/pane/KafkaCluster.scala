@@ -19,6 +19,7 @@ import javafx.scene.layout.Pane
 import org.apache.kafka.clients.admin
 import org.apache.kafka.clients.admin.{ConsumerGroupDescription, TopicDescription}
 import org.apache.kafka.common.{Node, TopicPartition, TopicPartitionInfo}
+import org.apache.logging.log4j.LogManager
 import org.slf4j.{Logger, LoggerFactory}
 
 import scala.collection.JavaConversions._
@@ -34,7 +35,7 @@ import scala.collection.immutable.Stream
 class KafkaCluster(
   root: AppPane, val button: Button, row: Row)
   extends BasePane[ClusterController]("/cluster1.fxml", row.getString("name")) {
-  val logger: Logger = LoggerFactory.getLogger(this.getClass)
+  val logger = LogManager.getLogger(this.getClass)
   val bootstrap = row.getString("address")
   var adminClient: admin.AdminClient = _
   var isHome: Boolean = row.isHome
