@@ -13,7 +13,7 @@ Here are a few Kafka UI system screenshots:
 ![image](https://github.com/zhaoyunhai1216/KafkaUI/blob/master/docs/images/Home.png)
 
 # Consumer
-![image](https://github.com/zhaoyunhai1216/KafkaUI/blob/master/docs/images/Comsumer.png)
+![image](https://github.com/zhaoyunhai1216/KafkaUI/blob/master/docs/images/Consumer.png)
 
 # Producer
 ![image](https://github.com/zhaoyunhai1216/KafkaUI/blob/master/docs/images/Producer.png)
