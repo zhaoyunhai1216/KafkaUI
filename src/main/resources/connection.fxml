@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ConnectionController">
+   <children>
+      <HBox prefHeight="35.0" prefWidth="650.0" AnchorPane.bottomAnchor="365.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#addRow" prefHeight="35.0" style="-fx-background-insets: 0; -fx-background-color: transparent;" text="Add" textFill="#068fff" underline="true">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#editRow" prefHeight="35.0" style="-fx-background-insets: 0; -fx-background-color: transparent;" text="Edit" textFill="#068fff" underline="true">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#deleteRow" prefHeight="35.0" style="-fx-background-insets: 0; -fx-background-color: transparent;" text="Delete" textFill="#068fff" underline="true">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Label prefHeight="35.0" prefWidth="485.0" text="or record connections via drag drop">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#saveRow" prefHeight="24.0" prefWidth="24.0" style="-fx-padding: 0 0 0 0; -fx-background-insets: 0; -fx-background-image: url('/images/commit.png'); -fx-background-color: transparent;" styleClass="cluster-connection-save-button">
+               <HBox.margin>
+                  <Insets bottom="5.5" top="5.5" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fx:id="clusterConnectionSave" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/commit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <Pane layoutX="3.0" layoutY="29.0" prefHeight="400.0" prefWidth="650.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
+         <children>
+            <TableView fx:id="tableView" layoutX="15.0" onMouseClicked="#open" prefHeight="353.0" prefWidth="622.0">
+              <columns>
+                  <TableColumn fx:id="id" prefWidth="50.0" style="-fx-alignment: CENTER;" text="id" />
+                <TableColumn fx:id="name" prefWidth="150.0" style="-fx-alignment: CENTER;" text="name" />
+                <TableColumn fx:id="address" prefWidth="300.0" style="-fx-alignment: CENTER;" text="address" />
+                  <TableColumn fx:id="ver" prefWidth="120.0" style="-fx-alignment: CENTER;" text="version" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

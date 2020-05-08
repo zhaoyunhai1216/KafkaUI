@@ -1,0 +1,139 @@
+#root-pane {
+    -fx-background-color: rgba(255, 255, 255, 0);
+}
+
+#shadow-pane {
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1;
+    -fx-background-color: rgba(255, 255, 255, 0);
+}
+
+.cluster-button {
+    -fx-pref-height: 24;
+    -fx-padding: 0 0 0 0;
+    -fx-background-insets: 0;
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+}
+
+
+.cluster-button:hover {
+    -fx-pref-height: 24;
+    -fx-padding: 0 0 0 0;
+    -fx-background-insets: 0;
+    -fx-background-color: #dedede;
+    -fx-background-radius: 0;
+}
+
+.flat-button {
+    -fx-padding: 0 0 0 0;
+    -fx-background-insets: 0;
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+}
+
+.flat-button:hover {
+    -fx-padding: 0 0 0 0;
+    -fx-background-insets: 0;
+    -fx-background-color: #dedede;
+    -fx-background-radius: 0;
+}
+
+
+.menu-button {
+    -fx-padding: 0 0 0 0;
+    -fx-background-insets: 0;
+    -fx-text-fill: black;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+}
+
+#win-minimum {
+    -fx-background-image: url("/images/minimize.png");
+    -fx-background-size: 12px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-padding: 0 0 0 0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+#win-switch {
+    -fx-background-image: url("/images/full_screen.png");
+    -fx-background-size: 12px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-padding: 0 0 0 0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+
+#win-close {
+    -fx-padding: 0 0 0 0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-background-image: url("/images/close.png");
+    -fx-background-size: 12px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#win-close:hover {
+    -fx-padding: 0 0 0 0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: #e81123;
+    -fx-background-image: url("/images/close_hover.png");
+    -fx-background-size: 12px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.menu-button:hover {
+    -fx-padding: 0 0 0 0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: #1a7dc4;
+}
+
+.menu-button .label:hover {
+    -fx-text-fill: white;
+}
+
+.menu-button .arrow {
+    -fx-background-color: transparent;
+}
+
+.menu-button .arrow-button {
+    -fx-padding: 0;
+}
+
+.menu-button .arrow-button .arrow {
+    -fx-padding: 0;
+}
+
+.menu-button .context-menu {
+    -fx-background-color: #f2f2f2;
+    -fx-border-width: 1;
+    -fx-border-color: #cccccc;
+    -fx-effect: dropshadow(three-pass-box, #72b9da, 0, 0, 0, 0);
+}
+
+.menu-button .menu-item {
+    -fx-pref-width: 200;
+}
+
+#menu-separator {
+    -fx-pref-width: 200;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 0 0 1 0;
+}
+
+.combo-box {
+    -fx-padding: 0 0 0 0;
+    -fx-background-insets: 0;
+    -fx-background-color: transparent;
+    -fx-border-width: 1;
+    -fx-border-color: #ccc;
+}

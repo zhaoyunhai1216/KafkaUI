@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="577.0" prefWidth="1116.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.BrokerController">
+   <children>
+      <VBox alignment="CENTER" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <ImageView fitHeight="360.0" fitWidth="611.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logo.png" />
+               </image>
+            </ImageView>
+            <Hyperlink fx:id="title" alignment="CENTER" onAction="#onAction" prefHeight="21.0" text="show configuration..." />
+         </children>
+      </VBox>
+      <AnchorPane fx:id="setting" maxHeight="300.0" minHeight="300.0" prefHeight="300.0" visible="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <children>
+            <AnchorPane maxHeight="26.0" minHeight="25.0" prefHeight="25.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label text="过滤条件">
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="tableFilter" AnchorPane.leftAnchor="65.0" />
+                  <Button maxHeight="24.0" maxWidth="24.0" minHeight="24.0" minWidth="24.0" mnemonicParsing="false" onAction="#refresh" prefHeight="24.0" prefWidth="24.0" stylesheets="@style.css" AnchorPane.rightAnchor="0.0">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/refresh.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <TableView fx:id="brokerView" stylesheets="@style.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="26.0">
+              <columns>
+                <TableColumn editable="false" prefWidth="538.0" style="-fx-alignment: CENTER;" text="name" />
+                <TableColumn editable="false" prefWidth="536.0" style="-fx-alignment: CENTER;" text="value" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <HBox fx:id="loading" alignment="TOP_CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label contentDisplay="CENTER" text="加载中" textFill="RED">
+               <graphic>
+                  <ProgressIndicator />
+               </graphic>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="890.0" prefWidth="1123.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ClusterController">
+   <children>
+      <SplitPane dividerPositions="0.18" prefHeight="400.0" prefWidth="600.0" style="-fx-background-insets: 0; -fx-border-color: #ccc; -fx-border-width: 1 0 0 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <AnchorPane maxWidth="800.0" minWidth="200.0" prefWidth="300.0" style="-fx-border-width: 0;" SplitPane.resizableWithParent="false">
+               <children>
+                  <TabPane side="LEFT" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <tabs>
+                        <Tab style="-fx-border-width: 0;" text="Brokers">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TreeView fx:id="brokerView" onMouseClicked="#showBroker" prefHeight="866.0" prefWidth="190.0" style="-fx-background-insets: 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Consumer">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TreeView fx:id="consumerView" onMouseClicked="#showConsumer" prefHeight="866.0" prefWidth="190.0" style="-fx-background-insets: 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children></AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Producer">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TreeView fx:id="producerView" onMouseClicked="#showProducer" prefHeight="866.0" prefWidth="190.0" style="-fx-background-insets: 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children></AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="ConsumerGroup">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TreeView fx:id="groupConsumerView" onMouseClicked="#showGroupConsumer" prefHeight="866.0" prefWidth="190.0" style="-fx-background-insets: 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children></AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </TabPane>
+                  <Button fx:id="queryButton" maxHeight="24.0" maxWidth="24.0" minHeight="24.0" minWidth="24.0" mnemonicParsing="false" onAction="#visible" prefHeight="24.0" prefWidth="24.0" styleClass="flat-button" stylesheets="@style.css" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="3.0">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/search.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="details" minHeight="0.0" minWidth="0.0" SplitPane.resizableWithParent="false" />
+         </items>
+      </SplitPane>
+      <HBox fx:id="searchBox" prefHeight="23.0" style="-fx-border-color: black; -fx-border-width: 1;" visible="false" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="32.0">
+         <children>
+            <Label prefHeight="21.0" style="-fx-background-color: #ffffff;" text="Search for:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="queryField" maxWidth="300.0" prefHeight="21.0" style="-fx-padding: 0 0 0 0; -fx-background-color: #ffffff; -fx-background-insets: 0; -fx-text-inner-color: red;" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

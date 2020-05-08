@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="807.0" prefWidth="1070.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ConsumerController">
+   <children>
+      <HBox alignment="CENTER" maxHeight="60.0" minHeight="60.0" prefHeight="60.0" spacing="15.0" style="-fx-border-color: #ccc; -fx-border-width: 1;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Button maxHeight="32.0" maxWidth="32.0" minHeight="32.0" minWidth="32.0" mnemonicParsing="false" onAction="#left" prefHeight="32.0" prefWidth="32.0" styleClass="flat-button" stylesheets="@style.css">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/left.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <ScrollPane fx:id="scroll" hbarPolicy="NEVER" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" style="-fx-background-insets: 0; -fx-padding: 0 0 0 0; -fx-background-color: transparent;" vbarPolicy="NEVER">
+               <content>
+                  <HBox fx:id="partitions" alignment="CENTER" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" spacing="15.0" style="-fx-padding: 0 0 0 0; -fx-background-insets: 0;" />
+               </content>
+            </ScrollPane>
+            <Button maxHeight="32.0" maxWidth="32.0" minHeight="32.0" minWidth="32.0" mnemonicParsing="false" onAction="#right" prefHeight="32.0" prefWidth="32.0" styleClass="flat-button" stylesheets="@style.css">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/right.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="100.0" right="100.0" />
+         </padding>
+      </HBox>
+      <AnchorPane layoutY="74.0" maxHeight="200.0" minHeight="200.0" prefHeight="200.0" prefWidth="1050.0" style="-fx-border-color: #ccc; -fx-border-width: 1;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="80.0">
+         <children>
+            <LineChart fx:id="lineChart" legendSide="TOP" prefHeight="200.0" prefWidth="1050.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <HBox fx:id="loading" alignment="TOP_CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="50.0">
+               <children>
+                  <Label contentDisplay="CENTER" text="加载中" textFill="RED">
+                     <graphic>
+                        <ProgressIndicator />
+                     </graphic>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane maxHeight="35.0" minHeight="35.0" prefHeight="35.0" prefWidth="1035.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="285.0">
+         <children>
+            <Label text="Group ID">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="groupIdFiled" prefWidth="250.0" AnchorPane.leftAnchor="70.0" />
+            <Label text="过滤条件" AnchorPane.rightAnchor="360.0" AnchorPane.topAnchor="0.0">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="tableFilter" AnchorPane.rightAnchor="190.0" />
+            <TextField fx:id="keepSize" alignment="TOP_LEFT" text="100" AnchorPane.rightAnchor="20.0" />
+            <Label text="行" AnchorPane.rightAnchor="0.0">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="313.0">
+         <children>
+            <TableView fx:id="recordView" editable="true" prefHeight="484.0" prefWidth="1050.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                <TableColumn maxWidth="80.0" minWidth="80.0" style="-fx-alignment: CENTER;" text="Partition" />
+                  <TableColumn maxWidth="150.0" minWidth="150.0" prefWidth="150.0" style="-fx-alignment: CENTER;" text="Offset" />
+                  <TableColumn maxWidth="185.0" minWidth="185.0" prefWidth="185.0" style="-fx-alignment: CENTER;" text="Timetamp" />
+                  <TableColumn maxWidth="180.0" minWidth="180.0" prefWidth="180.0" style="-fx-alignment: CENTER;" text="Key" />
+                  <TableColumn minWidth="200.0" prefWidth="454.0" style="-fx-alignment: CENTER;" text="Value" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <TextArea fx:id="textArea" prefHeight="100.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

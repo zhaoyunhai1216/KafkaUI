@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="root-pane" fx:id="shadow" prefHeight="768.0" prefWidth="1024.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.AppController">
+   <children>
+      <AnchorPane id="shadow-pane" prefHeight="768.0" prefWidth="1024.0" stylesheets="@style.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <effect>
+            <DropShadow height="50.0" radius="24.5" spread="0.6" width="50.0" />
+         </effect>
+      </AnchorPane>
+      <AnchorPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #f2f2f2; -fx-border-color: #000000; -fx-border-width: 1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane fx:id="titlePane" maxHeight="25.0" minHeight="25.0" onMouseClicked="#onWindowSwitch" prefHeight="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="500.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="140.0">
+                     <children>
+                        <ImageView fitHeight="18.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/app.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="8.0" top="4.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label maxHeight="23.0" minHeight="23.0" prefHeight="23.0" text="KafkaUI">
+                           <HBox.margin>
+                              <Insets left="5.0" top="1.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <MenuButton fx:id="fileMenu" alignment="CENTER" contentDisplay="TOP" maxHeight="23.0" minHeight="23.0" mnemonicParsing="false" prefHeight="23.0" stylesheets="@style.css" text="File">
+                           <items>
+                              <MenuItem id="menu-separator" mnemonicParsing="false" onAction="#open" text="Open Cluster">
+                                 <graphic>
+                                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/cluster.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem id="menu-separator" mnemonicParsing="false" onAction="#refresh" text="Refresh">
+                                 <graphic>
+                                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/refresh-opt.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#createTopic" text="Create Topic">
+                                 <graphic>
+                                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/create.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem id="menu-separator" mnemonicParsing="false" onAction="#deleteTopic" text="Delete Topic">
+                                 <graphic>
+                                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/delete.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#close" text="Quit">
+                                 <graphic>
+                                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/exit.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </MenuItem>
+                           </items>
+                           <HBox.margin>
+                              <Insets left="4.0" top="1.0" />
+                           </HBox.margin>
+                        </MenuButton>
+                        <MenuButton fx:id="optionsMenu" alignment="CENTER" maxHeight="23.0" minHeight="23.0" mnemonicParsing="false" prefHeight="23.0" stylesheets="@style.css" text="Window">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#windowSwitch" text="Switch Screen">
+                                 <graphic>
+                                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/full.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem id="menu-separator" mnemonicParsing="false" onAction="#minimum" text="Application Hidden">
+                                 <graphic>
+                                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/hidden.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </MenuItem>
+                           </items>
+                           <HBox.margin>
+                              <Insets top="1.0" />
+                           </HBox.margin>
+                        </MenuButton>
+                        <MenuButton fx:id="helpMenu" alignment="CENTER" maxHeight="23.0" minHeight="23.0" mnemonicParsing="false" prefHeight="23.0" stylesheets="@style.css" text="Help">
+                           <items>
+                              <MenuItem id="menu-separator" mnemonicParsing="false" onAction="#gettingStarted" text="Getting Started">
+                                 <graphic>
+                                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/document.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#webSite" text="Web Site">
+                                 <graphic>
+                                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/help.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#checkUpdate" text="Check for Updates...">
+                                 <graphic>
+                                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/update-app.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem disable="true" mnemonicParsing="false" text="Register...">
+                                 <graphic>
+                                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/register.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#openAbout" text="About KafkaUI">
+                                 <graphic>
+                                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/about.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </MenuItem>
+                           </items>
+                           <HBox.margin>
+                              <Insets top="1.0" />
+                           </HBox.margin>
+                        </MenuButton>
+                        <Button alignment="CENTER" maxHeight="23.0" maxWidth="23.0" minHeight="23.0" minWidth="23.0" mnemonicParsing="false" onAction="#sponsor" opacity="0.0" prefHeight="23.0" prefWidth="23.0" styleClass="flat-button">
+                           <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/sponsor.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets top="1.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Label fx:id="prompt" maxHeight="23.0" minHeight="23.0" prefHeight="23.0">
+                           <HBox.margin>
+                              <Insets left="5.0" top="1.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_RIGHT" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <Button id="win-minimum" fx:id="miniButton" maxHeight="25.0" maxWidth="45.0" minHeight="25.0" minWidth="45.0" mnemonicParsing="false" onAction="#minimum" prefHeight="25.0" prefWidth="45.0" styleClass="flat-button" stylesheets="@style.css">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <Button id="win-switch" fx:id="switchButton" maxHeight="25.0" maxWidth="45.0" minHeight="25.0" minWidth="45.0" mnemonicParsing="false" onMouseClicked="#windowSwitch" prefHeight="25.0" prefWidth="45.0" styleClass="flat-button" stylesheets="@style.css">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <Button id="win-close" fx:id="closeButton" maxHeight="25.0" maxWidth="45.0" minHeight="25.0" minWidth="45.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="45.0" styleClass="flat-button" stylesheets="@style.css">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children></AnchorPane>
+            <AnchorPane maxHeight="36.0" minHeight="36.0" prefHeight="36.0" style="-fx-border-color: #ccc; -fx-border-width: 1 0 0 0;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+               <children>
+                  <HBox maxHeight="36.0" minHeight="36.0" prefHeight="36.0" spacing="5.0">
+                     <padding>
+                        <Insets left="6.0" top="5.0" />
+                     </padding>
+                     <children>
+                        <Button fx:id="openButton" alignment="CENTER" maxHeight="24.0" maxWidth="24.0" minHeight="24.0" minWidth="24.0" mnemonicParsing="false" onAction="#open" prefHeight="24.0" prefWidth="24.0" styleClass="flat-button" stylesheets="@style.css">
+                           <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/cluster.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets left="2.0" right="5.0" top="2.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Separator maxHeight="36.0" minHeight="36.0" orientation="VERTICAL" prefHeight="36.0" AnchorPane.leftAnchor="40.0" />
+                  <HBox prefHeight="36.0" prefWidth="13.0" spacing="10.0" AnchorPane.leftAnchor="50.0">
+                     <padding>
+                        <Insets top="7.0" />
+                     </padding>
+                     <children>
+                        <Button alignment="CENTER" maxHeight="24.0" maxWidth="24.0" minHeight="24.0" minWidth="24.0" mnemonicParsing="false" onAction="#createTopic" prefHeight="24.0" prefWidth="24.0" styleClass="flat-button" stylesheets="@style.css">
+                           <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/create.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <Button alignment="CENTER" disable="true" maxHeight="24.0" maxWidth="24.0" minHeight="24.0" minWidth="24.0" mnemonicParsing="false" onAction="#updateTopic" prefHeight="24.0" prefWidth="24.0" styleClass="flat-button" stylesheets="@style.css">
+                           <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/update.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <Button alignment="CENTER" maxHeight="24.0" maxWidth="24.0" minHeight="24.0" minWidth="24.0" mnemonicParsing="false" onAction="#deleteTopic" prefHeight="24.0" prefWidth="24.0" styleClass="flat-button" stylesheets="@style.css">
+                           <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/delete.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Separator maxHeight="36.0" minHeight="36.0" orientation="VERTICAL" prefHeight="36.0" AnchorPane.leftAnchor="145.0" />
+                  <HBox fx:id="latelyCluster" prefHeight="36.0" spacing="5.0" AnchorPane.leftAnchor="155.0">
+                     <padding>
+                        <Insets top="7.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="clusterHbox1" alignment="TOP_RIGHT" prefHeight="36.0" prefWidth="500.0" spacing="5.0" AnchorPane.rightAnchor="0.0">
+                     <padding>
+                        <Insets top="7.0" />
+                     </padding>
+                     <children>
+                        <ComboBox fx:id="taskList" maxHeight="24.0" minHeight="24.0" onAction="#onAction" prefHeight="24.0" stylesheets="@style.css">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                        <Button fx:id="startButton" alignment="CENTER" maxHeight="24.0" maxWidth="24.0" minHeight="24.0" minWidth="24.0" mnemonicParsing="false" onAction="#run" prefHeight="24.0" prefWidth="24.0" styleClass="flat-button" stylesheets="@style.css">
+                           <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/start.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="stopButton" alignment="CENTER" maxHeight="24.0" maxWidth="24.0" minHeight="24.0" minWidth="24.0" mnemonicParsing="false" onAction="#stop" prefHeight="24.0" prefWidth="24.0" styleClass="flat-button" stylesheets="@style.css">
+                           <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/pause.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="refreshButton" alignment="CENTER" maxHeight="24.0" maxWidth="24.0" minHeight="24.0" minWidth="24.0" mnemonicParsing="false" onAction="#refresh" prefHeight="24.0" prefWidth="24.0" styleClass="flat-button" stylesheets="@style.css">
+                           <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/refresh.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="body" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="62.0" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+</AnchorPane>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxWidth="550.0" minWidth="550.0" prefHeight="122.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.TopicController">
+   <children>
+      <AnchorPane prefHeight="71.0" prefWidth="550.0" style="-fx-border-width: 1; -fx-border-color: #ccc; -fx-border-radius: 5;" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <Label text="Topic名称" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="13.0" />
+            <TextField fx:id="topicName" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+            <Label text="Partition数量" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="45.0" />
+            <TextField fx:id="partitionCnt" text="1" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="40.0" />
+            <Label text="replication-factor" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="45.0" />
+            <TextField fx:id="replicFactor" text="1" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0" />
+         </children>
+      </AnchorPane>
+      <Label fx:id="prompt" textFill="RED" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
+      <Label fx:id="loading" text="加载中" textFill="RED" visible="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
+         <graphic>
+            <ProgressIndicator maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" prefHeight="25.0" prefWidth="25.0" />
+         </graphic></Label>
+      <Button fx:id="cancelButton" maxWidth="70.0" minWidth="70.0" mnemonicParsing="false" onAction="#close" prefWidth="70.0" text="取消" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="90.0" />
+      <Button fx:id="submitButton" maxWidth="70.0" minWidth="70.0" mnemonicParsing="false" onAction="#submit" prefWidth="70.0" text="提交" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+   </children>
+</AnchorPane>
